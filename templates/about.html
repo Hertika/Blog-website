@@ -1,0 +1,23 @@
+<!-- templates/about.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+</head>
+<body>
+
+{% for about in about_objects %}
+    <h1>{{ about.about_heading }}</h1>
+    <p>{{ about.about_description }}</p>
+
+    <h3>Social Links:</h3>
+    <ul>
+        {% for social_link in about.social_links.all %}
+            <li><a href="{{ social_link.link }}" target="_blank">{{ social_link.platform }}</a></li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+</body>
+</html>
